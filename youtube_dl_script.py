@@ -9,7 +9,7 @@ def download_videos(urls):
         # Ensure the '-o' option specifies the directory structure you want
         # Here, downloads are organized into directories named after the uploader
         subprocess.call([
-            'yt-dlp',
+            '/usr/local/bin/yt-dlp',
             '--download-archive', 'downloaded.txt',  # Keeps track of downloaded videos
             '-i',  # Continue on download errors
             '--yes-playlist',
