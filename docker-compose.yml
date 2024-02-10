@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  youtube-archiver:
+    build: .
+    volumes:
+      - ./channels_and_playlists.txt:/app/channels_and_playlists.txt
+      - ./downloaded:/app/downloaded  # Maps the downloaded directory inside the container to a host directory
+      - ./crontab:/etc/cron.d/youtube-dl-cron
+      - ./downloaded.txt:/app/downloaded.txt  # Keeps track of downloaded videos
+    restart: unless-stopped
