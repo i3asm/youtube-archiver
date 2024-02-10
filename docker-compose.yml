@@ -8,4 +8,5 @@ services:
       - ./crontab:/etc/cron.d/youtube-dl-cron
       - ./channels_and_playlists.txt:/app/channels_and_playlists.txt
       - ./downloaded.txt:/app/downloaded.txt  # Keeps track of downloaded videos
+    restart: unless-stopped
 
