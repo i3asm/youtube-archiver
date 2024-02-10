@@ -1,8 +1,10 @@
 import subprocess
 
+
 def read_urls(file_path):
     with open(file_path, 'r') as file:
         return [line.strip() for line in file if line.strip()]
+
 
 def download_videos(urls):
     for url in urls:
@@ -17,7 +19,7 @@ def download_videos(urls):
             url
         ])
 
+
 if __name__ == "__main__":
-    print('start')
     urls = read_urls('/app/channels_and_playlists.txt')
     download_videos(urls)
